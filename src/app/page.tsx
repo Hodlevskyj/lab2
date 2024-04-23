@@ -21,10 +21,6 @@ export default async function Home() {
         <li>{reactappbar}</li>
         <li>{reactappfoo}</li>
       </ol>
-
-      
-      
-      
     </main>
   );
 }

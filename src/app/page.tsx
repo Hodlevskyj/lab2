@@ -15,7 +15,7 @@ export default async function Home() {
       <>
         {domain}
       </>
-      
+
     </main>
   );
 }

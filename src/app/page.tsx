@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { sql } from "@vercel/postgres";
-import {POST} from "./api/route"
+// import {POST} from "./api/users/route"
 
 export default async function Home() {
   const domain = process.env.DOMAIN;

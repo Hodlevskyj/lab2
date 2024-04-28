@@ -21,10 +21,15 @@
       "@/*": ["./src/*"]
     }
   },
-<<<<<<< HEAD
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "mocks/users.js", "src/app/api/route.js", "scripts/seed.js", "src/app/api/route.js"],
-=======
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "mocks/cards.js", "scripts/seed.js"],
->>>>>>> f72c4211c2ed383d8f478b969305a69469ce338c
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "mocks/cards.js",
+    "scripts/seed.js"
+, "src/app/api/users/route.js", "src/app/api/users/[id]/route.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

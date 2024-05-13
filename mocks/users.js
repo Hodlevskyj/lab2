@@ -11,6 +11,18 @@ const users = [
 		email: 'usernew@nextmail.com',
 		password: '123456',
 	},
+	{
+		id: '410522c2-4001-2342-9325-cfc3b6a6442b',
+		name: 'User3',
+		email: 'user3@nextmail.com',
+		password: '123456',
+	},
+	{
+		id: '410532c4-4231-2342-9325-cdc5b6a6442b',
+		name: 'User4',
+		email: 'user4@nextmail.com',
+		password: '123456',
+	},
 ];
 module.exports = {
 	users,

@@ -1,5 +1,16 @@
 import { NextResponse } from "next/server";
 const { db } = require('@vercel/postgres');
+const bcrypt = require('bcrypt');
+
+async function hashPassword(password) {
+    try {
+        const hashedPassword = await bcrypt.hash(password, 10);
+        return hashedPassword;
+    } catch (error) {
+        console.error('Error hashing password:', error);
+        throw error;
+    }
+}
 
 export async function GET(request, context) {
     const { params } = context;
@@ -43,7 +54,8 @@ export async function PUT(request, context) {
     const { name, email, password } = await request.json();
     try {
         const client = await db.connect();
-        await client.query(`UPDATE users SET name = $1, email = $2, password = $3 WHERE id = $4`, [name, email, password, userId]);
+        const hashedPassword = await hashPassword(password);
+        await client.query(`UPDATE users SET name = $1, email = $2, password = $3 WHERE id = $4`, [name, email, hashedPassword, userId]);
         await client.end();
 
         return NextResponse.json({ message: "User updated successfully" }, { status: 200 });
